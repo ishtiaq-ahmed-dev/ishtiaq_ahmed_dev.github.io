@@ -7,7 +7,14 @@
      - gsap + ScrollTrigger  — animation timelines
    ========================================================= */
 
+window.__marks = [];
+window.__mark = (s) => { window.__marks.push(s); try { console.log("[main]", s); } catch(_){} };
+window.__mark("file-start");
+
+window.addEventListener("error", (e) => window.__mark("ERR: " + e.message + " @ " + (e.filename||"") + ":" + e.lineno));
+
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+window.__mark("prm=" + prefersReducedMotion);
 
 /* =========================================================
    1) Vanta 3D backgrounds
@@ -15,7 +22,8 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
    GLOBE for footer (wireframe globe with connections).
    ========================================================= */
 (function initVanta() {
-  if (prefersReducedMotion || !window.VANTA) return;
+  window.__mark("initVanta:enter");
+  if (prefersReducedMotion || !window.VANTA) { window.__mark("initVanta:skip"); return; }
 
   if (window.VANTA.HALO && document.getElementById("vanta-hero")) {
     window.VANTA.HALO({
@@ -58,7 +66,8 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
    scrollTo so they respect the smooth-scroll timeline.
    ========================================================= */
 (function initLenis() {
-  if (prefersReducedMotion || typeof Lenis === "undefined") return;
+  window.__mark("initLenis:enter Lenis=" + typeof Lenis);
+  if (prefersReducedMotion || typeof Lenis === "undefined") { window.__mark("initLenis:skip"); return; }
 
   const lenis = new Lenis({
     duration: 1.15,
@@ -286,3 +295,4 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
    ========================================================= */
 const y = document.getElementById("year");
 if (y) y.textContent = new Date().getFullYear();
+window.__mark("file-end");
