@@ -55,24 +55,40 @@ button { font: inherit; background: none; border: 0; cursor: pointer; color: inh
   html { scroll-behavior: auto; }
 }
 
-/* ---------- Cursor ---------- */
-.cursor {
+/* ---------- Cursor (two-element magnetic pattern) ---------- */
+.cursor-dot,
+.cursor-ring {
   position: fixed;
   top: 0; left: 0;
-  width: 28px; height: 28px;
-  border: 1px solid var(--gold);
-  border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
-  transform: translate(-50%, -50%) scale(0.6);
-  transition: transform 220ms var(--ease), background 220ms var(--ease), border-color 220ms var(--ease);
-  mix-blend-mode: difference;
+  border-radius: 50%;
+  will-change: transform, width, height, opacity;
   display: none;
 }
-@media (hover: hover) and (pointer: fine) {
-  .cursor { display: block; }
-  body.cursor-hover .cursor { transform: translate(-50%, -50%) scale(1.6); background: var(--gold); }
+.cursor-dot {
+  width: 6px; height: 6px;
+  background: #fff;
+  mix-blend-mode: difference;
+  transition: width 220ms var(--ease), height 220ms var(--ease), opacity 220ms var(--ease);
 }
+.cursor-ring {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(232, 182, 98, 0.9);
+  transition: width 260ms var(--ease), height 260ms var(--ease), border-color 260ms var(--ease), background 260ms var(--ease), opacity 260ms var(--ease);
+}
+@media (hover: hover) and (pointer: fine) {
+  .cursor-dot, .cursor-ring { display: block; }
+  body { cursor: none; }
+  a, button, [role="button"] { cursor: none; }
+  body.cursor-active .cursor-dot { width: 0; height: 0; opacity: 0; }
+  body.cursor-active .cursor-ring {
+    width: 64px; height: 64px;
+    background: rgba(232, 182, 98, 0.12);
+    border-color: rgba(232, 182, 98, 1);
+  }
+}
+@media (max-width: 900px) { .cursor-dot, .cursor-ring { display: none !important; } }
 
 /* ---------- Nav ---------- */
 .nav {
@@ -187,12 +203,12 @@ button { font: inherit; background: none; border: 0; cursor: pointer; color: inh
   overflow: hidden;
   isolation: isolate;
 }
-#hero-canvas {
+.hero__bg {
   position: absolute;
   inset: 0;
-  width: 100%; height: 100%;
   z-index: 1;
 }
+.hero__bg canvas { display: block; }
 .hero__grain {
   position: absolute; inset: 0; z-index: 2;
   pointer-events: none;
@@ -882,12 +898,12 @@ button { font: inherit; background: none; border: 0; cursor: pointer; color: inh
   overflow: hidden;
   isolation: isolate;
 }
-#footer-canvas {
+.contact__bg {
   position: absolute; inset: 0;
-  width: 100%; height: 100%;
   z-index: 1;
-  opacity: 0.6;
+  opacity: 0.85;
 }
+.contact__bg canvas { display: block; }
 .contact::before {
   content: "";
   position: absolute; inset: 0;
@@ -985,12 +1001,17 @@ button { font: inherit; background: none; border: 0; cursor: pointer; color: inh
   .contact__meta { grid-template-columns: 1fr; }
 }
 
-/* =========================================================
-   Reveal-on-scroll utility
-   ========================================================= */
-.reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 800ms var(--ease), transform 800ms var(--ease);
+/* Reveal-on-scroll — GSAP drives these; class kept as fallback only */
+html.no-js .reveal { opacity: 1; transform: none; }
+
+/* Smooth-scroll (Lenis) required tweaks */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-scrolling iframe { pointer-events: none; }
+
+/* Magnetic transition — buttons ease back to origin smoothly */
+.btn, .nav__cta, .contact__email, [data-magnetic] {
+  transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1), background 220ms var(--ease), color 220ms var(--ease), border-color 220ms var(--ease);
 }
-.reveal.is-visible { opacity: 1; transform: translateY(0); }
