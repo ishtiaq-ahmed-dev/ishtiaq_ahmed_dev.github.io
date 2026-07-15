@@ -1,594 +1,456 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Ishtiaq Ahmed - AI Developer & Full Stack Web Developer Portfolio. Building the Future with AI.">
-    <meta name="keywords"
-        content="AI Developer, Web Developer, Python, Machine Learning, Full Stack Developer, Pakistan">
-    <meta name="author" content="Ishtiaq Ahmed">
-    <title>Ishtiaq Ahmed | AI Developer & Full Stack Web Developer</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ishtiaq Ahmed — AI Engineer & Full-Stack Developer</title>
+<meta name="description" content="Ishtiaq Ahmed — AI Engineer and Full-Stack Developer. Builder of AI chatbots, workflow automations, and multimodal deep-learning research (CardioFusion-SSL).">
+<meta name="theme-color" content="#0a0f1e">
+
+<meta property="og:title" content="Ishtiaq Ahmed — AI Engineer & Full-Stack Developer">
+<meta property="og:description" content="AI-focused Full-Stack Developer. BS Artificial Intelligence (class topper, CGPA 3.55). Research: multimodal ECG/PCG cardiac screening.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ishtiaq-ahmed-dev.github.io/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/main.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230a0f1e%22/><text x=%2250%22 y=%2268%22 font-family=%22Inter,sans-serif%22 font-size=%2256%22 font-weight=%22700%22 fill=%22%23e8b662%22 text-anchor=%22middle%22>IA</text></svg>">
 </head>
-
 <body>
-    <!-- Video Background Container -->
-    <div class="video-container">
-        <video autoplay muted loop playsinline class="video-bg rotate-180">
-            <source src="videos/blackhole.webm" type="video/webm">
-        </video>
+
+<div class="cursor" aria-hidden="true"></div>
+
+<nav class="nav" id="nav">
+  <a href="#top" class="nav__logo" aria-label="Home">
+    <span class="nav__logo-mark">IA</span>
+  </a>
+  <ul class="nav__links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:iashtiaqkhattak@gmail.com" class="nav__cta">Book a Call<span aria-hidden="true">↗</span></a>
+  <button class="nav__burger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</nav>
+
+<header class="hero" id="top">
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+  <div class="hero__grain" aria-hidden="true"></div>
+
+  <div class="hero__inner">
+    <div class="hero__meta">
+      <span class="hero__tag">— AI ENGINEERING</span>
+      <span class="hero__index">01 / 05</span>
     </div>
 
-    <!-- Animated Background -->
-    <div class="bg-animation">
-        <div class="stars"></div>
-        <div class="stars2"></div>
-        <div class="stars3"></div>
+    <h1 class="hero__title">
+      <span class="hero__eyebrow">Portfolio</span>
+      <span class="hero__name">ISHTIAQ<br>AHMED</span>
+    </h1>
+
+    <p class="hero__sub">
+      <span class="hero__sub-line">AI Engineer &nbsp;·&nbsp; Full-Stack Developer &nbsp;·&nbsp; Researcher</span>
+      <span class="hero__sub-tag">Building AI systems that ship. From WhatsApp automations serving live clients to multimodal deep-learning models for cardiac screening.</span>
+    </p>
+
+    <div class="hero__stats">
+      <div><b>2+</b><span>Years shipping</span></div>
+      <div><b>3.55</b><span>CGPA · Class Topper</span></div>
+      <div><b>13+</b><span>DSA projects</span></div>
+      <div><b>1</b><span>Research paper in progress</span></div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#home" class="nav-logo">
-                <div class="logo-image">
-                    <img src="images/me.jpg" alt="Ishtiaq Ahmed">
-                </div>
-                <span>Ishtiaq Ahmed</span>
-            </a>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#education" class="nav-link">Education</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="nav-social">
-                <a href="https://github.com/ishtiaq-ahmed-dev" target="_blank" rel="noopener"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/ishtiaq-ahmed-90a70b35a" target="_blank" rel="noopener"><i
-                        class="fab fa-linkedin"></i></a>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+    <a class="hero__scroll" href="#about">
+      <span>Scroll to explore</span>
+      <span class="hero__scroll-arrow" aria-hidden="true">↓</span>
+    </a>
+  </div>
+</header>
+
+<main>
+
+<section class="about" id="about">
+  <div class="about__grid">
+    <div class="section-label"><span>●</span> About</div>
+
+    <h2 class="about__headline">
+      I build <em>AI-first</em> products end-to-end — from research prototype to production dashboard.
+    </h2>
+
+    <div class="about__body">
+      <p>
+        I'm a BS Artificial Intelligence student at <strong>IMSciences Peshawar</strong>, currently topping my class with a 3.55 CGPA. For the past two years I've been shipping real systems for a US tax consultancy — client portals, AI chatbots, and n8n automations that replaced hours of manual work with seconds of API calls.
+      </p>
+      <p>
+        My current research, <strong>CardioFusion-SSL</strong>, fuses ECG and heart-sound signals through cross-modal self-supervised pretraining for early cardiac disease detection. I own the full pipeline: dataset curation, signal preprocessing, model architecture, and paper drafting.
+      </p>
+      <p>
+        I care about the boring parts: understanding the problem first, choosing the smallest thing that works, and shipping something a real user can hold.
+      </p>
+    </div>
+
+    <aside class="about__card">
+      <div class="about__photo">
+        <img src="images/me.jpg" alt="Portrait of Ishtiaq Ahmed" loading="lazy">
+      </div>
+      <div class="about__card-body">
+        <div><span>Based in</span><b>Peshawar, PK</b></div>
+        <div><span>Available for</span><b>Remote roles · Freelance</b></div>
+        <div><span>Currently</span><b>4th Semester · BS-AI</b></div>
+        <div><span>Focus</span><b>ML research · AI product eng</b></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="skills" id="skills">
+  <div class="section-label"><span>●</span> Toolkit</div>
+  <h2 class="section-heading">The stack I reach for.</h2>
+
+  <div class="skills__grid">
+    <article class="skill-cat">
+      <header><span class="skill-cat__num">01</span><h3>AI &amp; Machine Learning</h3></header>
+      <ul>
+        <li>Python</li><li>TensorFlow</li><li>scikit-learn</li>
+        <li>NumPy</li><li>Pandas</li><li>Matplotlib</li>
+        <li>Signal Processing</li><li>OpenAI / LLM APIs</li><li>Prompt Engineering</li>
+      </ul>
+    </article>
+
+    <article class="skill-cat">
+      <header><span class="skill-cat__num">02</span><h3>Automation &amp; Integrations</h3></header>
+      <ul>
+        <li>n8n</li><li>WhatsApp Business API</li><li>Google Sheets API</li>
+        <li>Webhooks</li><li>REST</li><li>Zoho Suite</li>
+      </ul>
+    </article>
+
+    <article class="skill-cat">
+      <header><span class="skill-cat__num">03</span><h3>Web Development</h3></header>
+      <ul>
+        <li>React</li><li>JavaScript</li><li>HTML5 / CSS3</li>
+        <li>PHP</li><li>Flask</li><li>Firebase</li><li>Responsive Design</li>
+      </ul>
+    </article>
+
+    <article class="skill-cat">
+      <header><span class="skill-cat__num">04</span><h3>Systems &amp; DSA</h3></header>
+      <ul>
+        <li>C++ (OOP, STL)</li><li>Memory management</li>
+        <li>Data Structures</li><li>Algorithms</li><li>Problem Solving</li>
+      </ul>
+    </article>
+
+    <article class="skill-cat">
+      <header><span class="skill-cat__num">05</span><h3>Tooling</h3></header>
+      <ul>
+        <li>Git &amp; GitHub</li><li>VS Code</li><li>Linux</li>
+        <li>Docker (basics)</li><li>Postman</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="research" id="research">
+  <div class="research__card">
+    <div class="research__meta">
+      <div class="section-label section-label--light"><span>●</span> Research · Ongoing</div>
+      <span class="research__tag">Deep Learning</span>
+      <span class="research__tag">Multimodal</span>
+      <span class="research__tag">Healthcare AI</span>
+    </div>
+
+    <h2 class="research__title">
+      CardioFusion-SSL
+      <span>Cross-Modal Self-Supervised Pretraining for ECG–PCG Cardiac Screening</span>
+    </h2>
+
+    <p class="research__abstract">
+      A multimodal deep-learning pipeline fusing electrocardiogram (ECG) and phonocardiogram (heart-sound, PCG) signals through cross-modal self-supervised pretraining and hierarchical fusion for early cardiac disease detection. End-to-end ownership: dataset curation, signal preprocessing, model architecture, evaluation, and paper drafting.
+    </p>
+
+    <dl class="research__facts">
+      <div><dt>Stack</dt><dd>Python · TensorFlow · Signal Processing</dd></div>
+      <div><dt>Role</dt><dd>Sole author · Research lead</dd></div>
+      <div><dt>Status</dt><dd>Model training · Paper drafting</dd></div>
+      <div><dt>Institution</dt><dd>IMSciences Peshawar</dd></div>
+    </dl>
+
+    <div class="research__actions">
+      <a href="https://github.com/ishtiaq-ahmed-dev/CardioFusion-SSL" target="_blank" rel="noopener" class="btn btn--dark">View Repository<span aria-hidden="true">↗</span></a>
+      <a href="mailto:iashtiaqkhattak@gmail.com?subject=CardioFusion-SSL%20Collaboration" class="btn btn--ghost">Discuss Collaboration</a>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="section-label"><span>●</span> Featured Work</div>
+  <h2 class="section-heading">Selected projects, shipped or in flight.</h2>
+
+  <div class="work__grid">
+
+    <article class="work-card work-card--wide">
+      <div class="work-card__media work-card__media--gradient work-card__media--cardio">
+        <div class="work-card__chip">Research</div>
+        <div class="work-card__viz" aria-hidden="true">
+          <svg viewBox="0 0 400 120" preserveAspectRatio="none">
+            <polyline points="0,60 20,60 30,20 40,100 50,60 80,60 90,10 100,110 110,60 200,60 210,30 220,90 230,60 260,60 270,15 280,105 290,60 400,60" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
         </div>
-    </nav>
+      </div>
+      <div class="work-card__body">
+        <h3>CardioFusion-SSL</h3>
+        <p>Self-supervised pretraining + hierarchical fusion of ECG and PCG signals for cardiac screening.</p>
+        <div class="work-card__tags"><span>Python</span><span>TensorFlow</span><span>DL Research</span></div>
+        <a href="https://github.com/ishtiaq-ahmed-dev/CardioFusion-SSL" target="_blank" rel="noopener">Repository<span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <div class="hero-badges" data-aos="fade-down" data-aos-duration="1000">
-                    <div class="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]">
-                        <i class="fas fa-star text-[#b49bff] mr-[10px]"></i>
-                        <h1 class="Welcome-text text-[13px]">AI Developer</h1>
-                    </div>
-                    <div class="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]">
-                        <i class="fas fa-star text-[#b49bff] mr-[10px]"></i>
-                        <h1 class="Welcome-text text-[13px]">Full Stack Developer</h1>
-                    </div>
-                    <div class="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]">
-                        <i class="fas fa-star text-[#b49bff] mr-[10px]"></i>
-                        <h1 class="Welcome-text text-[13px]">Student</h1>
-                    </div>
-                </div>
-                <h1 class="hero-title" data-aos="fade-left" data-aos-delay="500">
-                    Building the <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">Future</span>
-                    with <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">AI</span>
-                </h1>
-                <p class="hero-subtitle cursive" data-aos="fade-left" data-aos-delay="700">
-                    Hi, I'm <span class="gradient-text font-bold">Ishtiaq Ahmed</span>
-                </p>
-                <p class="hero-description" data-aos="fade-left" data-aos-delay="800">
-                    Passionate about artificial intelligence, machine learning, and web development.
-                    Currently pursuing AI studies at IMSciences University Peshawar, building innovative
-                    solutions that bridge technology and creativity.
-                </p>
-                <div class="hero-stats" data-aos="fade-left" data-aos-delay="900">
-                    <div class="stat-card">
-                        <span class="stat-number">3+</span>
-                        <span class="stat-label">Years Web Dev</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">2</span>
-                        <span class="stat-label">Years AI</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">8+</span>
-                        <span class="stat-label">Projects</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Passion</span>
-                    </div>
-                </div>
-                <div class="hero-buttons" data-aos="fade-left" data-aos-delay="1000">
-                    <a href="#about" class="btn button-primary">Learn More <i class="fas fa-arrow-down"></i></a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me <i class="fas fa-paper-plane"></i></a>
-                </div>
-            </div>
-            <div class="hero-image" data-aos="fade-right" data-aos-delay="800">
-                <div class="hero-image-wrapper">
-                    <div class="main-profile-container">
-                        <img src="images/me.jpg" alt="Ishtiaq Ahmed" class="hero-profile-pic">
-                        <div class="profile-glow"></div>
-                    </div>
+    <article class="work-card">
+      <div class="work-card__media" style="background-image:url('archive/images-original/project-automation.png')">
+        <div class="work-card__chip">Production</div>
+      </div>
+      <div class="work-card__body">
+        <h3>WhatsApp Automation &amp; CRM Pipeline</h3>
+        <p>Self-hosted n8n workflow: inbound WhatsApp leads auto-classified and synced to Google Sheets in real time. Cut manual reply time from hours to seconds.</p>
+        <div class="work-card__tags"><span>n8n</span><span>WhatsApp API</span><span>Node.js</span></div>
+      </div>
+    </article>
 
-                    <!-- Background Decorative SVG -->
-                    <div class="hero-bg-icons">
-                        <img src="images/mainIconsdark.svg" alt="Background Icons">
-                    </div>
+    <article class="work-card">
+      <div class="work-card__media" style="background-image:url('archive/images-original/project-startup-ai.png')">
+        <div class="work-card__chip">Client Product</div>
+      </div>
+      <div class="work-card__body">
+        <h3>Client Portal Dashboard</h3>
+        <p>Full-stack portal giving foreign founders self-serve access to their US LLC compliance status, documents, and filings. Onboarding chatbot cut repetitive support queries.</p>
+        <div class="work-card__tags"><span>React</span><span>Firebase</span><span>AI Chatbot</span></div>
+      </div>
+    </article>
 
-                    <!-- Orbiting Icons -->
-                    <div class="orbit-container">
-                        <!-- Inner Layer: Programmer Tools -->
-                        <div class="orbit-inner">
-                            <div class="orbit-icon" style="--i:0;"><img src="images/github.svg" alt="GitHub"></div>
-                            <div class="orbit-icon" style="--i:1;"><img src="images/vscode.png" alt="VS Code"></div>
-                            <div class="orbit-icon" style="--i:2;"><img src="images/xcode.png" alt="Xcode"></div>
-                            <div class="orbit-icon" style="--i:3;"><img src="images/and stu.png" alt="Android Studio">
-                            </div>
-                            <div class="orbit-icon" style="--i:4;"><img src="images/dev c++.png" alt="Dev C++"></div>
-                            <div class="orbit-icon" style="--i:5;"><img src="images/linux.png" alt="Linux"></div>
-                            <div class="orbit-icon" style="--i:6;"><img src="images/firebase.png" alt="Firebase"></div>
-                            <div class="orbit-icon" style="--i:7;"><img src="images/linkedin.svg" alt="LinkedIn"></div>
-                        </div>
-
-                        <!-- Outer Layer: Skills, AI & Design (14 icons) -->
-                        <div class="orbit-outer">
-                            <div class="orbit-icon" style="--i:0;"><img src="images/python.png" alt="Python"></div>
-                            <div class="orbit-icon" style="--i:1;"><img src="images/js.png" alt="JavaScript"></div>
-                            <div class="orbit-icon" style="--i:2;"><img src="images/react.png" alt="React"></div>
-                            <div class="orbit-icon" style="--i:3;"><img src="images/ts.png" alt="TypeScript"></div>
-                            <div class="orbit-icon" style="--i:4;"><img src="images/next.png" alt="Next.js"></div>
-                            <div class="orbit-icon" style="--i:5;"><img src="images/tailwind.png" alt="Tailwind"></div>
-                            <div class="orbit-icon" style="--i:6;"><img src="images/chatgpt.png" alt="ChatGPT"></div>
-                            <div class="orbit-icon" style="--i:7;"><img src="images/gemini.png" alt="Gemini"></div>
-                            <div class="orbit-icon" style="--i:8;"><img src="images/photoshop.png" alt="Photoshop">
-                            </div>
-                            <div class="orbit-icon" style="--i:9;"><img src="images/adobe acrobat .png" alt="Acrobat">
-                            </div>
-                            <div class="orbit-icon" style="--i:10;"><img src="images/upwork.png" alt="Upwork"></div>
-                            <div class="orbit-icon" style="--i:11;"><img src="images/fiver.png" alt="Fiverr"></div>
-                            <div class="orbit-icon" style="--i:12;"><img src="images/docker.png" alt="Docker"></div>
-                            <div class="orbit-icon" style="--i:13;"><img src="images/n8n.png" alt="n8n"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <article class="work-card">
+      <div class="work-card__media work-card__media--gradient work-card__media--code">
+        <div class="work-card__chip">Utility</div>
+        <div class="work-card__viz work-card__viz--code" aria-hidden="true">
+<pre>&gt; site-ripper --url example.com
+[✓] fetched  index.html
+[✓] parsed   47 assets
+[✓] wrote    ./mirror/
+</pre>
         </div>
-        <div class="scroll-indicator">
-            <div class="mouse"></div>
-            <span>Scroll Down</span>
+      </div>
+      <div class="work-card__body">
+        <h3>Site Ripper</h3>
+        <p>Python tool that clones any target website (HTML, CSS, JS, assets) for offline analysis, template extraction, and reverse-engineering studies.</p>
+        <div class="work-card__tags"><span>Python</span><span>HTTP</span><span>HTML Parsing</span></div>
+      </div>
+    </article>
+
+    <article class="work-card">
+      <div class="work-card__media" style="background-image:url('archive/images-original/project-github.png')">
+        <div class="work-card__chip">Open Source</div>
+      </div>
+      <div class="work-card__body">
+        <h3>DSA Portfolio — C++</h3>
+        <p>13+ real-world C++ implementations: BST matchmaking engine, hospital emergency priority queue, IP-address doubly-linked-list tracker, Josephus problem, and more.</p>
+        <div class="work-card__tags"><span>C++</span><span>OOP</span><span>Algorithms</span></div>
+        <a href="https://github.com/ishtiaq-ahmed-dev/DATA_STRUCTURES" target="_blank" rel="noopener">Repository<span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+
+    <article class="work-card">
+      <div class="work-card__media work-card__media--gradient work-card__media--cpp">
+        <div class="work-card__chip">Library</div>
+        <div class="work-card__viz work-card__viz--code" aria-hidden="true">
+<pre>template &lt;typename T&gt;
+class LinkedList {
+public:
+  void push_back(const T&amp; v);
+  T&amp; at(size_t i);
+  size_t size() const;
+};
+</pre>
         </div>
-    </section>
+      </div>
+      <div class="work-card__body">
+        <h3>Cpp-Library</h3>
+        <p>Personal C++ library of reusable data-structure and utility templates — a scratchpad for STL-style design and generic programming.</p>
+        <div class="work-card__tags"><span>C++</span><span>Templates</span><span>STL Design</span></div>
+        <a href="https://github.com/ishtiaq-ahmed-dev/Cpp-Library" target="_blank" rel="noopener">Repository<span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
 
-    <!-- About Section -->
-    <section id="about" class="about section">
-        <!-- Encryption UI Animation -->
-        <div class="encryption-video-container">
-            <video autoplay muted loop playsinline preload="auto">
-                <source src="videos/encryption.webm" type="video/webm">
-            </video>
+  </div>
+</section>
+
+<section class="experience" id="experience">
+  <div class="experience__head">
+    <div class="section-label"><span>●</span> Experience</div>
+    <h2 class="section-heading">Two years of shipping. Four semesters of studying.</h2>
+    <p class="experience__intro">Roles, education, and the milestones between.</p>
+  </div>
+
+  <ol class="timeline">
+    <li class="timeline__item timeline__item--current">
+      <div class="timeline__when">Oct 2023 — Present</div>
+      <div class="timeline__what">
+        <h3>Web Developer &amp; AI Programmer</h3>
+        <p class="timeline__where">Startup Consultancy LLC · Peshawar (Remote)</p>
+        <ul>
+          <li>Built the firm's client-portal dashboard and internal admin tools from scratch, replacing manual document tracking with a self-serve web system.</li>
+          <li>Deployed an AI chatbot on WhatsApp for lead qualification, classifying prospects into ECI vs. Non-ECI segments before sales handoff.</li>
+          <li>Designed and maintained n8n automations connecting WhatsApp, Google Sheets, and Zoho Mail — streamlining the sales pipeline.</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="timeline__item timeline__item--current">
+      <div class="timeline__when">Sept 2024 — Present</div>
+      <div class="timeline__what">
+        <h3>BS Artificial Intelligence</h3>
+        <p class="timeline__where">Institute of Management Sciences, Peshawar</p>
+        <ul>
+          <li>CGPA <strong>3.55 / 4.00</strong> — Class Topper, 3rd Semester (merit scholarship awarded).</li>
+          <li>4th semester in progress. Active research: multimodal deep learning for cardiovascular screening.</li>
+          <li>Recognized as "Best Programmer of class" for consistent problem-solving performance.</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="timeline__item">
+      <div class="timeline__when">2025</div>
+      <div class="timeline__what">
+        <h3>Generative AI — 3-Month Course</h3>
+        <p class="timeline__where">AKTI Peshawar · Certified</p>
+        <ul>
+          <li>Intensive training in modern generative AI: LLMs, prompt engineering, and applied ML workflows.</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="timeline__item">
+      <div class="timeline__when">2021 — 2023</div>
+      <div class="timeline__what">
+        <h3>HSSC (Pre-Medical)</h3>
+        <p class="timeline__where">The City College, Peshawar</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<section class="highlights" id="highlights">
+  <div class="highlights__col">
+    <div class="section-label"><span>●</span> Honors &amp; Awards</div>
+    <ul class="highlights__list">
+      <li>
+        <span class="highlights__year">2025</span>
+        <div>
+          <b>Class Topper — 3rd Semester, BS-AI</b>
+          <span>Awarded merit scholarship, IMSciences Peshawar.</span>
         </div>
-
-        <div class="container relative z-10">
-            <h2 class="section-title" data-aos="fade-up">About <span class="gradient-text">Me</span></h2>
-            <div class="about-content">
-                <div class="about-image" data-aos="fade-right">
-                    <div class="about-image-wrapper">
-                        <img src="images/me.jpg" alt="Ishtiaq Ahmed">
-                    </div>
-                </div>
-                <div class="about-text">
-                    <div class="about-card" data-aos="fade-left" data-aos-delay="100">
-                        <h3>👋 Hello!</h3>
-                        <p>
-                            I'm a passionate AI Developer and Full Stack Web Developer with over
-                            <strong>3 years of web development experience</strong> and <strong>2 years in AI</strong>.
-                            I excel in crafting innovative digital solutions that make a real impact.
-                        </p>
-                    </div>
-                    <div class="about-card">
-                        <h3>🎓 Education</h3>
-                        <p>
-                            Currently pursuing <strong>BS in Artificial Intelligence</strong> at IMSciences University
-                            Peshawar (since September 2024). Completed intensive ML and Deep Learning training at AKTI
-                            Peshawar.
-                        </p>
-                    </div>
-                    <div class="about-card">
-                        <h3>💼 Experience</h3>
-                        <p>
-                            My journey includes working in <strong>startup consultancy for over 2 years</strong> and
-                            handling multiple freelance clients. I've delivered web applications and automation
-                            solutions
-                            for various businesses.
-                        </p>
-                    </div>
-                    <div class="about-card vision-card" data-aos="fade-left" data-aos-delay="400">
-                        <h3>🎯 Future Vision</h3>
-                        <p>
-                            Committed to becoming a leading AI developer, creating innovative solutions that make a
-                            real impact on people's lives and businesses.
-                        </p>
-                    </div>
-                </div>
-            </div>
+      </li>
+      <li>
+        <span class="highlights__year">2024</span>
+        <div>
+          <b>Best Programmer of Class</b>
+          <span>Recognized by faculty for consistent problem-solving performance.</span>
         </div>
-    </section>
+      </li>
+    </ul>
+  </div>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills section">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Technical <span class="gradient-text">Skills</span></h2>
-            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Python • C++ • Web Development • AI/ML
-            </p>
-
-            <div class="skills-grid">
-                <!-- Python Development -->
-                <div class="skill-category">
-                    <h3 class="skill-category-title"><i class="fab fa-python"></i> Python Development</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fab fa-python"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-brain"></i>
-                            <span>TensorFlow</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-fire"></i>
-                            <span>PyTorch</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-table"></i>
-                            <span>NumPy</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>Pandas</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-chart-line"></i>
-                            <span>Matplotlib</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-eye"></i>
-                            <span>OpenCV</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-flask"></i>
-                            <span>Flask</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- C++ Programming -->
-                <div class="skill-category">
-                    <h3 class="skill-category-title"><i class="fas fa-code"></i> C++ Programming</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fas fa-file-code"></i>
-                            <span>C++</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-cubes"></i>
-                            <span>OOP</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-project-diagram"></i>
-                            <span>DSA</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Web Development -->
-                <div class="skill-category">
-                    <h3 class="skill-category-title"><i class="fas fa-globe"></i> Web Development</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fab fa-html5"></i>
-                            <span>HTML5</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-css3-alt"></i>
-                            <span>CSS3</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-js-square"></i>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-php"></i>
-                            <span>PHP</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-react"></i>
-                            <span>React</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dev Tools -->
-                <div class="skill-category">
-                    <h3 class="skill-category-title"><i class="fas fa-tools"></i> Dev Tools</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-code"></i>
-                            <span>VS Code</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-robot"></i>
-                            <span>ChatGPT</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-docker"></i>
-                            <span>Docker</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div class="highlights__col">
+    <div class="section-label"><span>●</span> Certifications</div>
+    <ul class="highlights__list">
+      <li>
+        <span class="highlights__year">2025</span>
+        <div>
+          <b>Generative AI — 3-Month Course</b>
+          <span>AKTI Peshawar. Certified.</span>
         </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="education section">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Education & <span class="gradient-text">Experience</span></h2>
-
-            <div class="timeline-grid">
-                <!-- Education Column -->
-                <div class="timeline-column">
-                    <h3 class="timeline-heading"><i class="fas fa-graduation-cap"></i> Education</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-icon">🎓</div>
-                            <div class="timeline-content">
-                                <h4>IMSciences University Peshawar</h4>
-                                <p class="timeline-role">BS in Artificial Intelligence</p>
-                                <span class="timeline-date">September 2024 - Present</span>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-icon">🤖</div>
-                            <div class="timeline-content">
-                                <h4>AKTI Peshawar</h4>
-                                <p class="timeline-role">Intensive AI Course - ML & Deep Learning</p>
-                                <span class="timeline-date">3 Months Course - 2025</span>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-icon">💻</div>
-                            <div class="timeline-content">
-                                <h4>Self Learning</h4>
-                                <p class="timeline-role">Python Programming</p>
-                                <span class="timeline-date">2024</span>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-icon">🌐</div>
-                            <div class="timeline-content">
-                                <h4>Self Learning</h4>
-                                <p class="timeline-role">Web Development (HTML, CSS, JS, PHP, React)</p>
-                                <span class="timeline-date">2023</span>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-icon">📊</div>
-                            <div class="timeline-content">
-                                <h4>Self Learning</h4>
-                                <p class="timeline-role">Data Structures & Algorithms</p>
-                                <span class="timeline-date">2025</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Experience Column -->
-                <div class="timeline-column">
-                    <h3 class="timeline-heading"><i class="fas fa-briefcase"></i> Experience</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-icon">🚀</div>
-                            <div class="timeline-content">
-                                <h4>Startup Consultancy</h4>
-                                <p class="timeline-role">Developer & Consultant</p>
-                                <span class="timeline-date">2+ Years</span>
-                                <p class="timeline-desc">Worked with various startups providing technical solutions and
-                                    consultancy services.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-icon">💼</div>
-                            <div class="timeline-content">
-                                <h4>Freelance</h4>
-                                <p class="timeline-role">Full Stack Developer</p>
-                                <span class="timeline-date">Ongoing</span>
-                                <p class="timeline-desc">Handled multiple client projects, delivering web applications
-                                    and automation solutions.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-icon">🎯</div>
-                            <div class="timeline-content">
-                                <h4>ML & Deep Learning</h4>
-                                <p class="timeline-role">Practitioner</p>
-                                <span class="timeline-date">2025 - After AKTI Course</span>
-                                <p class="timeline-desc">Three months into Machine Learning and Deep Learning. Actively
-                                    building AI-powered projects.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </li>
+      <li>
+        <span class="highlights__year">Ongoing</span>
+        <div>
+          <b>Machine Learning &amp; Deep Learning Specializations</b>
+          <span>Coursera. In progress.</span>
         </div>
-    </section>
+      </li>
+    </ul>
+  </div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects section">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Featured <span class="gradient-text">Projects</span></h2>
+  <div class="highlights__col">
+    <div class="section-label"><span>●</span> Languages</div>
+    <ul class="highlights__list">
+      <li><div><b>English</b><span>Highly proficient · Professional</span></div></li>
+      <li><div><b>Pashto</b><span>Native / mother tongue</span></div></li>
+      <li><div><b>Urdu</b><span>Very good command</span></div></li>
+    </ul>
+  </div>
+</section>
 
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/project-startup-ai.png" alt="STARTUP AI Dashboard">
-                        <div class="project-overlay">
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <span class="project-status">In Development</span>
-                        <h3>STARTUP AI Dashboard</h3>
-                        <p>A comprehensive dashboard for startup consultancy with AI-powered analytics and business
-                            insights.</p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>AI/ML</span>
-                            <span>React</span>
-                        </div>
-                    </div>
-                </div>
+</main>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/project-automation.png" alt="Website Automation">
-                        <div class="project-overlay">
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <span class="project-status">Completed</span>
-                        <h3>Website Automation</h3>
-                        <p>Python workflows to automate website operations, including data processing, report
-                            generation, and task scheduling.</p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>Automation</span>
-                            <span>Flask</span>
-                        </div>
-                    </div>
-                </div>
+<footer class="contact" id="contact">
+  <canvas id="footer-canvas" aria-hidden="true"></canvas>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/project-github.png" alt="GitHub Projects">
-                        <div class="project-overlay">
-                            <a href="https://github.com/ishtiaq-ahmed-dev" target="_blank" class="project-link"><i
-                                    class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <span class="project-status">Ongoing</span>
-                        <h3>GitHub Projects</h3>
-                        <p>Various programming projects including DSA implementations in C++ and Python, web
-                            applications, and machine learning experiments.</p>
-                        <div class="project-tech">
-                            <span>C++</span>
-                            <span>Python</span>
-                            <span>JavaScript</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="contact__inner">
+    <div class="section-label section-label--light"><span>●</span> Get in touch</div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Get in <span class="gradient-text">Touch</span></h2>
-            <p class="section-subtitle">I'm always open to discussing new projects, creative ideas, or opportunities to
-                be part of your vision.</p>
+    <h2 class="contact__headline">
+      Have a role or project in mind?<br>
+      <em>Let's talk.</em>
+    </h2>
 
-            <div class="contact-grid">
-                <a href="mailto:ishtiaqkhattak32@gmail.com" class="contact-card" data-aos="flip-left"
-                    data-aos-delay="100">
-                    <i class="fas fa-envelope"></i>
-                    <h4>Email</h4>
-                    <p>ishtiaqkhattak32@gmail.com</p>
-                </a>
-                <a href="tel:+923354317471" class="contact-card">
-                    <i class="fas fa-phone"></i>
-                    <h4>Phone</h4>
-                    <p>+92 335 4317471</p>
-                </a>
-                <a href="https://github.com/ishtiaq-ahmed-dev" target="_blank" rel="noopener" class="contact-card">
-                    <i class="fab fa-github"></i>
-                    <h4>GitHub</h4>
-                    <p>ishtiaq-ahmed-dev</p>
-                </a>
-                <a href="https://linkedin.com/in/ishtiaq-ahmed-90a70b35a" target="_blank" rel="noopener"
-                    class="contact-card">
-                    <i class="fab fa-linkedin"></i>
-                    <h4>LinkedIn</h4>
-                    <p>Ishtiaq Ahmed</p>
-                </a>
-                <a href="https://www.fiverr.com/users/dev__ishtiaq" target="_blank" rel="noopener"
-                    class="contact-card fiverr-card">
-                    <i class="fas fa-briefcase"></i>
-                    <h4>Fiverr</h4>
-                    <p>dev__ishtiaq</p>
-                    <span class="new-badge">Recently Started</span>
-                </a>
-            </div>
-        </div>
-    </section>
+    <a href="mailto:iashtiaqkhattak@gmail.com" class="contact__email">
+      iashtiaqkhattak@gmail.com
+      <span aria-hidden="true">↗</span>
+    </a>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Connect</h4>
-                    <a href="https://github.com/ishtiaq-ahmed-dev" target="_blank"><i class="fab fa-github"></i>
-                        GitHub</a>
-                    <a href="https://linkedin.com/in/ishtiaq-ahmed-90a70b35a" target="_blank"><i
-                            class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="https://www.fiverr.com/users/dev__ishtiaq" target="_blank"><i class="fas fa-briefcase"></i>
-                        Fiverr</a>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <a href="mailto:ishtiaqkhattak32@gmail.com"><i class="fas fa-envelope"></i> Email Me</a>
-                    <a href="tel:+923354317471"><i class="fas fa-phone"></i> Call Me</a>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <a href="#about">About Me</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#projects">Projects</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Ishtiaq Ahmed. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <div class="contact__meta">
+      <div>
+        <span>Location</span>
+        <b>Gulberg 3, Peshawar, Pakistan</b>
+      </div>
+      <div>
+        <span>Phone / WhatsApp</span>
+        <b>+92 335 4317471</b>
+      </div>
+      <div>
+        <span>Availability</span>
+        <b>Open to remote roles &amp; freelance</b>
+      </div>
+    </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/main.js"></script>
+    <ul class="contact__socials">
+      <li><a href="https://github.com/ishtiaq-ahmed-dev" target="_blank" rel="noopener">GitHub<span aria-hidden="true">↗</span></a></li>
+      <li><a href="https://www.linkedin.com/in/ishtiaq-ahmed-90a70b35a/" target="_blank" rel="noopener">LinkedIn<span aria-hidden="true">↗</span></a></li>
+      <li><a href="https://www.fiverr.com/dev__ishtiaq" target="_blank" rel="noopener">Fiverr<span aria-hidden="true">↗</span></a></li>
+      <li><a href="archive/index.html">Previous Site<span aria-hidden="true">↗</span></a></li>
+    </ul>
+
+    <div class="contact__foot">
+      <span>© <span id="year">2026</span> Ishtiaq Ahmed</span>
+      <span>Built with care · Three.js · No frameworks</span>
+    </div>
+  </div>
+</footer>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.161.0/build/three.module.js"
+  }
+}
+</script>
+<script type="module" src="js/hero3d.js"></script>
+<script src="js/main.js" defer></script>
 </body>
-
 </html>
