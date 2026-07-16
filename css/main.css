@@ -55,40 +55,7 @@ button { font: inherit; background: none; border: 0; cursor: pointer; color: inh
   html { scroll-behavior: auto; }
 }
 
-/* ---------- Cursor (two-element magnetic pattern) ---------- */
-.cursor-dot,
-.cursor-ring {
-  position: fixed;
-  top: 0; left: 0;
-  pointer-events: none;
-  z-index: 9999;
-  border-radius: 50%;
-  will-change: transform, width, height, opacity;
-  display: none;
-}
-.cursor-dot {
-  width: 6px; height: 6px;
-  background: #fff;
-  mix-blend-mode: difference;
-  transition: width 220ms var(--ease), height 220ms var(--ease), opacity 220ms var(--ease);
-}
-.cursor-ring {
-  width: 36px; height: 36px;
-  border: 1px solid rgba(232, 182, 98, 0.9);
-  transition: width 260ms var(--ease), height 260ms var(--ease), border-color 260ms var(--ease), background 260ms var(--ease), opacity 260ms var(--ease);
-}
-@media (hover: hover) and (pointer: fine) {
-  .cursor-dot, .cursor-ring { display: block; }
-  body { cursor: none; }
-  a, button, [role="button"] { cursor: none; }
-  body.cursor-active .cursor-dot { width: 0; height: 0; opacity: 0; }
-  body.cursor-active .cursor-ring {
-    width: 64px; height: 64px;
-    background: rgba(232, 182, 98, 0.12);
-    border-color: rgba(232, 182, 98, 1);
-  }
-}
-@media (max-width: 900px) { .cursor-dot, .cursor-ring { display: none !important; } }
+/* Cursor: native browser cursor everywhere. */
 
 /* ---------- Nav ---------- */
 .nav {
@@ -614,8 +581,30 @@ button { font: inherit; background: none; border: 0; cursor: pointer; color: inh
   margin-bottom: 8px;
 }
 .research__facts dd { font-size: 15px; color: #fff; }
-.research__actions {
+.research__pub {
   margin-top: 40px;
+  padding: 20px 22px;
+  border: 1px solid var(--line-dark);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+}
+.research__pub-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.research__pub-cite {
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.85);
+}
+.research__pub-cite em { color: #fff; font-style: italic; }
+
+.research__actions {
+  margin-top: 32px;
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
@@ -628,37 +617,99 @@ button { font: inherit; background: none; border: 0; cursor: pointer; color: inh
 }
 
 /* =========================================================
-   WORK
+   WORK — 3D coverflow carousel (Swiper.js)
    ========================================================= */
 .work {
-  padding: var(--pad-y) var(--pad-x);
+  padding: var(--pad-y) 0 calc(var(--pad-y) - 20px);
   background: var(--bg-light);
   border-top: 1px solid var(--line);
+  overflow: hidden;
 }
 .work > .section-label,
-.work > .section-heading { max-width: var(--wrap); margin-left: auto; margin-right: auto; }
-.work__grid {
+.work > .section-heading {
   max-width: var(--wrap);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
+  padding-left: var(--pad-x); padding-right: var(--pad-x);
+  margin-left: auto; margin-right: auto;
 }
+
+.work-3d {
+  position: relative;
+  padding: 40px 0 60px;
+  perspective: 1200px;
+}
+.work-swiper {
+  width: 100%;
+  padding: 60px 0 80px;
+  overflow: visible;
+}
+.work-swiper .swiper-wrapper { align-items: stretch; }
+.work-swiper .swiper-slide {
+  width: min(440px, 82vw);
+  height: auto;
+  display: flex;
+  transition: opacity 400ms var(--ease), filter 400ms var(--ease);
+  opacity: 0.55;
+  filter: saturate(0.7) brightness(0.9);
+}
+.work-swiper .swiper-slide-active {
+  opacity: 1;
+  filter: none;
+}
+.work-swiper .swiper-slide-prev,
+.work-swiper .swiper-slide-next { opacity: 0.85; }
+
+/* Nav buttons */
+.work-3d__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 10;
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.25);
+  transition: background 220ms var(--ease), color 220ms var(--ease), transform 220ms var(--ease);
+  color: var(--ink);
+}
+.work-3d__nav svg { width: 22px; height: 22px; }
+.work-3d__nav:hover {
+  background: var(--ink);
+  color: #fff;
+  transform: translateY(-50%) scale(1.06);
+}
+.work-3d__nav--prev { left: max(20px, 4vw); }
+.work-3d__nav--next { right: max(20px, 4vw); }
+
+/* Pagination dots */
+.work-swiper .swiper-pagination { position: relative; margin-top: 8px; }
+.work-swiper .swiper-pagination-bullet {
+  width: 8px; height: 8px;
+  background: var(--muted);
+  opacity: 0.4;
+  transition: opacity 200ms var(--ease), width 200ms var(--ease), background 200ms var(--ease);
+}
+.work-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 28px;
+  border-radius: 999px;
+  background: var(--gold);
+}
+
+/* Card body — flex row/col reset from previous grid */
 .work-card {
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
   display: flex; flex-direction: column;
+  width: 100%;
   transition: transform 400ms var(--ease), box-shadow 400ms var(--ease);
 }
-.work-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.15);
+.swiper-slide-active .work-card {
+  box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.28);
 }
-.work-card--wide { grid-column: 1 / -1; flex-direction: row; }
-.work-card--wide .work-card__media { flex: 1.1; min-height: 320px; }
-.work-card--wide .work-card__body { flex: 1; }
 
 .work-card__media {
   position: relative;
@@ -750,10 +801,10 @@ button { font: inherit; background: none; border: 0; cursor: pointer; color: inh
 }
 .work-card__body a:hover { color: var(--accent); border-color: var(--accent); }
 
-@media (max-width: 900px) {
-  .work__grid { grid-template-columns: 1fr; }
-  .work-card--wide { flex-direction: column; }
-  .work-card--wide .work-card__media { aspect-ratio: 16 / 10; min-height: 0; }
+@media (max-width: 720px) {
+  .work-3d__nav { width: 44px; height: 44px; }
+  .work-3d__nav svg { width: 18px; height: 18px; }
+  .work-swiper .swiper-slide { width: 86vw; }
 }
 
 /* =========================================================

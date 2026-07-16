@@ -16,7 +16,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="css/main.css?v=20260715c">
+<link rel="stylesheet" href="css/main.css?v=20260715d">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230a0f1e%22/><text x=%2250%22 y=%2268%22 font-family=%22Inter,sans-serif%22 font-size=%2256%22 font-weight=%22700%22 fill=%22%23e8b662%22 text-anchor=%22middle%22>IA</text></svg>">
 
 <!-- Battle-tested libs from CDN: Three r134 (for Vanta), Vanta HALO 3D background, Lenis smooth scroll, GSAP + ScrollTrigger for animations -->
@@ -29,8 +31,6 @@
 </head>
 <body>
 
-<div class="cursor-dot" aria-hidden="true"></div>
-<div class="cursor-ring" aria-hidden="true"></div>
 
 <nav class="nav" id="nav">
   <a href="#top" class="nav__logo" aria-label="Home">
@@ -71,9 +71,9 @@
 
     <div class="hero__stats">
       <div><b>2+</b><span>Years shipping</span></div>
-      <div><b>3.55</b><span>CGPA · Class Topper</span></div>
+      <div><b>6</b><span>Public GitHub repos</span></div>
       <div><b>13+</b><span>DSA projects</span></div>
-      <div><b>1</b><span>Research paper in progress</span></div>
+      <div><b>1</b><span>Research manuscript</span></div>
     </div>
 
     <a class="hero__scroll" href="#about">
@@ -95,7 +95,7 @@
 
     <div class="about__body">
       <p>
-        I'm a BS Artificial Intelligence student at <strong>IMSciences Peshawar</strong>, currently topping my class with a 3.55 CGPA. For the past two years I've been shipping real systems for a US tax consultancy — client portals, AI chatbots, and n8n automations that replaced hours of manual work with seconds of API calls.
+        I'm an undergraduate researcher and BS Artificial Intelligence student at <strong>IMSciences Peshawar</strong> (expected 2028). For the past two years I've been shipping real systems for a US tax consultancy — client portals, AI chatbots, and n8n automations that replaced hours of manual work with seconds of API calls.
       </p>
       <p>
         My current research, <strong>CardioFusion-SSL</strong>, fuses ECG and heart-sound signals through cross-modal self-supervised pretraining for early cardiac disease detection. I own the full pipeline: dataset curation, signal preprocessing, model architecture, and paper drafting.
@@ -114,6 +114,7 @@
         <div><span>Available for</span><b>Remote roles · Freelance</b></div>
         <div><span>Currently</span><b>4th Semester · BS-AI</b></div>
         <div><span>Focus</span><b>ML research · AI product eng</b></div>
+        <div><span>Graduating</span><b>2028</b></div>
       </div>
     </aside>
   </div>
@@ -192,6 +193,13 @@
       <div><dt>Institution</dt><dd>IMSciences Peshawar</dd></div>
     </dl>
 
+    <div class="research__pub">
+      <div class="research__pub-label">Manuscript in preparation</div>
+      <div class="research__pub-cite">
+        Ahmed, I. (2025). <em>CardioSense AI: A Multimodal Deep Learning Approach for Early Cardiovascular Disease Detection Using ECG and PCG Signals.</em>
+      </div>
+    </div>
+
     <div class="research__actions">
       <a href="https://github.com/ishtiaq-ahmed-dev/CardioFusion-SSL" target="_blank" rel="noopener" class="btn btn--dark">View Repository<span aria-hidden="true">↗</span></a>
       <a href="mailto:iashtiaqkhattak@gmail.com?subject=CardioFusion-SSL%20Collaboration" class="btn btn--ghost">Discuss Collaboration</a>
@@ -201,83 +209,96 @@
 
 <section class="work" id="work">
   <div class="section-label"><span>●</span> Featured Work</div>
-  <h2 class="section-heading">Selected projects, shipped or in flight.</h2>
+  <h2 class="section-heading">Selected projects — drag, swipe, or use arrow keys.</h2>
 
-  <div class="work__grid">
+  <div class="work-3d">
+    <div class="swiper work-swiper">
+      <div class="swiper-wrapper">
 
-    <article class="work-card work-card--wide">
-      <div class="work-card__media work-card__media--gradient work-card__media--cardio">
-        <div class="work-card__chip">Research</div>
-        <div class="work-card__viz" aria-hidden="true">
-          <svg viewBox="0 0 400 120" preserveAspectRatio="none">
-            <polyline points="0,60 20,60 30,20 40,100 50,60 80,60 90,10 100,110 110,60 200,60 210,30 220,90 230,60 260,60 270,15 280,105 290,60 400,60" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          </svg>
+        <div class="swiper-slide">
+          <article class="work-card">
+            <div class="work-card__media work-card__media--gradient work-card__media--cardio">
+              <div class="work-card__chip">Research</div>
+              <div class="work-card__viz" aria-hidden="true">
+                <svg viewBox="0 0 400 120" preserveAspectRatio="none">
+                  <polyline points="0,60 20,60 30,20 40,100 50,60 80,60 90,10 100,110 110,60 200,60 210,30 220,90 230,60 260,60 270,15 280,105 290,60 400,60" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </div>
+            </div>
+            <div class="work-card__body">
+              <h3>CardioFusion-SSL</h3>
+              <p>Self-supervised pretraining + hierarchical fusion of ECG and PCG signals for cardiac screening.</p>
+              <div class="work-card__tags"><span>Python</span><span>TensorFlow</span><span>DL Research</span></div>
+              <a href="https://github.com/ishtiaq-ahmed-dev/CardioFusion-SSL" target="_blank" rel="noopener">Repository<span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
         </div>
-      </div>
-      <div class="work-card__body">
-        <h3>CardioFusion-SSL</h3>
-        <p>Self-supervised pretraining + hierarchical fusion of ECG and PCG signals for cardiac screening.</p>
-        <div class="work-card__tags"><span>Python</span><span>TensorFlow</span><span>DL Research</span></div>
-        <a href="https://github.com/ishtiaq-ahmed-dev/CardioFusion-SSL" target="_blank" rel="noopener">Repository<span aria-hidden="true">↗</span></a>
-      </div>
-    </article>
 
-    <article class="work-card">
-      <div class="work-card__media" style="background-image:url('archive/images/project-automation.png')">
-        <div class="work-card__chip">Production</div>
-      </div>
-      <div class="work-card__body">
-        <h3>WhatsApp Automation &amp; CRM Pipeline</h3>
-        <p>Self-hosted n8n workflow: inbound WhatsApp leads auto-classified and synced to Google Sheets in real time. Cut manual reply time from hours to seconds.</p>
-        <div class="work-card__tags"><span>n8n</span><span>WhatsApp API</span><span>Node.js</span></div>
-      </div>
-    </article>
+        <div class="swiper-slide">
+          <article class="work-card">
+            <div class="work-card__media" style="background-image:url('archive/images/project-automation.png')">
+              <div class="work-card__chip">Production</div>
+            </div>
+            <div class="work-card__body">
+              <h3>WhatsApp Automation &amp; CRM Pipeline</h3>
+              <p>Self-hosted n8n workflow: inbound WhatsApp leads auto-classified and synced to Google Sheets in real time. Cut manual reply time from hours to seconds.</p>
+              <div class="work-card__tags"><span>n8n</span><span>WhatsApp API</span><span>Node.js</span></div>
+            </div>
+          </article>
+        </div>
 
-    <article class="work-card">
-      <div class="work-card__media" style="background-image:url('archive/images/project-startup-ai.png')">
-        <div class="work-card__chip">Client Product</div>
-      </div>
-      <div class="work-card__body">
-        <h3>Client Portal Dashboard</h3>
-        <p>Full-stack portal giving foreign founders self-serve access to their US LLC compliance status, documents, and filings. Onboarding chatbot cut repetitive support queries.</p>
-        <div class="work-card__tags"><span>React</span><span>Firebase</span><span>AI Chatbot</span></div>
-      </div>
-    </article>
+        <div class="swiper-slide">
+          <article class="work-card">
+            <div class="work-card__media" style="background-image:url('archive/images/project-startup-ai.png')">
+              <div class="work-card__chip">Client Product</div>
+            </div>
+            <div class="work-card__body">
+              <h3>Client Portal Dashboard</h3>
+              <p>Full-stack portal giving foreign founders self-serve access to their US LLC compliance status, documents, and filings. Onboarding chatbot cut repetitive support queries.</p>
+              <div class="work-card__tags"><span>React</span><span>Firebase</span><span>AI Chatbot</span></div>
+            </div>
+          </article>
+        </div>
 
-    <article class="work-card">
-      <div class="work-card__media work-card__media--gradient work-card__media--code">
-        <div class="work-card__chip">Utility</div>
-        <div class="work-card__viz work-card__viz--code" aria-hidden="true">
+        <div class="swiper-slide">
+          <article class="work-card">
+            <div class="work-card__media work-card__media--gradient work-card__media--code">
+              <div class="work-card__chip">Utility</div>
+              <div class="work-card__viz work-card__viz--code" aria-hidden="true">
 <pre>&gt; site-ripper --url example.com
 [✓] fetched  index.html
 [✓] parsed   47 assets
 [✓] wrote    ./mirror/
 </pre>
+              </div>
+            </div>
+            <div class="work-card__body">
+              <h3>Site Ripper</h3>
+              <p>Python tool that clones any target website (HTML, CSS, JS, assets) for offline analysis, template extraction, and reverse-engineering studies.</p>
+              <div class="work-card__tags"><span>Python</span><span>HTTP</span><span>HTML Parsing</span></div>
+            </div>
+          </article>
         </div>
-      </div>
-      <div class="work-card__body">
-        <h3>Site Ripper</h3>
-        <p>Python tool that clones any target website (HTML, CSS, JS, assets) for offline analysis, template extraction, and reverse-engineering studies.</p>
-        <div class="work-card__tags"><span>Python</span><span>HTTP</span><span>HTML Parsing</span></div>
-      </div>
-    </article>
 
-    <article class="work-card">
-      <div class="work-card__media" style="background-image:url('archive/images/project-github.png')">
-        <div class="work-card__chip">Open Source</div>
-      </div>
-      <div class="work-card__body">
-        <h3>DSA Portfolio — C++</h3>
-        <p>13+ real-world C++ implementations: BST matchmaking engine, hospital emergency priority queue, IP-address doubly-linked-list tracker, Josephus problem, and more.</p>
-        <div class="work-card__tags"><span>C++</span><span>OOP</span><span>Algorithms</span></div>
-        <a href="https://github.com/ishtiaq-ahmed-dev/DATA_STRUCTURES" target="_blank" rel="noopener">Repository<span aria-hidden="true">↗</span></a>
-      </div>
-    </article>
+        <div class="swiper-slide">
+          <article class="work-card">
+            <div class="work-card__media" style="background-image:url('archive/images/project-github.png')">
+              <div class="work-card__chip">Open Source</div>
+            </div>
+            <div class="work-card__body">
+              <h3>DSA Portfolio — C++</h3>
+              <p>13+ real-world C++ implementations: BST matchmaking engine, hospital emergency priority queue, IP-address doubly-linked-list tracker, Josephus problem, and more.</p>
+              <div class="work-card__tags"><span>C++</span><span>OOP</span><span>Algorithms</span></div>
+              <a href="https://github.com/ishtiaq-ahmed-dev/DATA_STRUCTURES" target="_blank" rel="noopener">Repository<span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        </div>
 
-    <article class="work-card">
-      <div class="work-card__media work-card__media--gradient work-card__media--cpp">
-        <div class="work-card__chip">Library</div>
-        <div class="work-card__viz work-card__viz--code" aria-hidden="true">
+        <div class="swiper-slide">
+          <article class="work-card">
+            <div class="work-card__media work-card__media--gradient work-card__media--cpp">
+              <div class="work-card__chip">Library</div>
+              <div class="work-card__viz work-card__viz--code" aria-hidden="true">
 <pre>template &lt;typename T&gt;
 class LinkedList {
 public:
@@ -286,16 +307,28 @@ public:
   size_t size() const;
 };
 </pre>
+              </div>
+            </div>
+            <div class="work-card__body">
+              <h3>Cpp-Library</h3>
+              <p>Personal C++ library of reusable data-structure and utility templates — a scratchpad for STL-style design and generic programming.</p>
+              <div class="work-card__tags"><span>C++</span><span>Templates</span><span>STL Design</span></div>
+              <a href="https://github.com/ishtiaq-ahmed-dev/Cpp-Library" target="_blank" rel="noopener">Repository<span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
         </div>
-      </div>
-      <div class="work-card__body">
-        <h3>Cpp-Library</h3>
-        <p>Personal C++ library of reusable data-structure and utility templates — a scratchpad for STL-style design and generic programming.</p>
-        <div class="work-card__tags"><span>C++</span><span>Templates</span><span>STL Design</span></div>
-        <a href="https://github.com/ishtiaq-ahmed-dev/Cpp-Library" target="_blank" rel="noopener">Repository<span aria-hidden="true">↗</span></a>
-      </div>
-    </article>
 
+      </div>
+
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <button class="work-3d__nav work-3d__nav--prev" aria-label="Previous project">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 6l-6 6 6 6"/></svg>
+    </button>
+    <button class="work-3d__nav work-3d__nav--next" aria-label="Next project">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
   </div>
 </section>
 
@@ -321,14 +354,14 @@ public:
     </li>
 
     <li class="timeline__item timeline__item--current">
-      <div class="timeline__when">Sept 2024 — Present</div>
+      <div class="timeline__when">Sept 2024 — Expected 2028</div>
       <div class="timeline__what">
         <h3>BS Artificial Intelligence</h3>
-        <p class="timeline__where">Institute of Management Sciences, Peshawar</p>
+        <p class="timeline__where">Institute of Management Sciences (IMSciences), Peshawar</p>
         <ul>
-          <li>CGPA <strong>3.55 / 4.00</strong> — Class Topper, 3rd Semester (merit scholarship awarded).</li>
           <li>4th semester in progress. Active research: multimodal deep learning for cardiovascular screening.</li>
-          <li>Recognized as "Best Programmer of class" for consistent problem-solving performance.</li>
+          <li>Relevant coursework: Data Structures &amp; Algorithms, OOP, Discrete Mathematics, Probability &amp; Statistics, Database Systems, Introduction to AI.</li>
+          <li>Recognized as "Best Programmer of Class" — faculty acknowledgement across programming courses.</li>
         </ul>
       </div>
     </li>
@@ -336,19 +369,27 @@ public:
     <li class="timeline__item">
       <div class="timeline__when">2025</div>
       <div class="timeline__what">
-        <h3>Generative AI — 3-Month Course</h3>
-        <p class="timeline__where">AKTI Peshawar · Certified</p>
+        <h3>Generative AI — 3-Month Intensive Course</h3>
+        <p class="timeline__where">AKTI Peshawar (Al-Khidmat Technical Institute) · Certified</p>
         <ul>
-          <li>Intensive training in modern generative AI: LLMs, prompt engineering, and applied ML workflows.</li>
+          <li>Foundations of ML, deep learning, transformer architectures, applied generative AI (LLMs, prompt engineering, model APIs).</li>
         </ul>
       </div>
     </li>
 
     <li class="timeline__item">
-      <div class="timeline__when">2021 — 2023</div>
+      <div class="timeline__when">Aug 2021 — Apr 2023</div>
       <div class="timeline__what">
-        <h3>HSSC (Pre-Medical)</h3>
+        <h3>Higher Secondary School Certificate — Pre-Medical</h3>
         <p class="timeline__where">The City College, Peshawar</p>
+      </div>
+    </li>
+
+    <li class="timeline__item">
+      <div class="timeline__when">Completed Apr 2021</div>
+      <div class="timeline__what">
+        <h3>Secondary School Certificate (Matric) — Pre-Medical</h3>
+        <p class="timeline__where">F.G. Public High School, Lahore Cantt</p>
       </div>
     </li>
   </ol>
@@ -361,15 +402,15 @@ public:
       <li>
         <span class="highlights__year">2025</span>
         <div>
-          <b>Class Topper — 3rd Semester, BS-AI</b>
-          <span>Awarded merit scholarship, IMSciences Peshawar.</span>
+          <b>Merit-Based Tuition Scholarship</b>
+          <span>IMSciences Peshawar, BS Artificial Intelligence.</span>
         </div>
       </li>
       <li>
         <span class="highlights__year">2024</span>
         <div>
           <b>Best Programmer of Class</b>
-          <span>Recognized by faculty for consistent problem-solving performance.</span>
+          <span>Faculty recognition for consistent problem-solving across programming courses.</span>
         </div>
       </li>
     </ul>
@@ -452,6 +493,6 @@ public:
   </div>
 </footer>
 
-<script src="js/app.js" defer></script>
+<script src="js/app.js?v=d" defer></script>
 </body>
 </html>

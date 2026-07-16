@@ -128,65 +128,45 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
 })();
 
 /* =========================================================
-   4) Custom cursor — dot + trailing ring, magnetic on hover
-   Pattern from Osmo Supply / Codrops "magnetic cursor" — a
-   small solid dot + a larger ring that lags behind with lerp.
+   4) Work 3D coverflow — Swiper.js
+   Standard coverflow effect: cards rotate in perspective as
+   they scroll, current card front-and-center. Autoplay + drag
+   + keyboard + wheel-to-scroll horizontally.
    ========================================================= */
-(function initCursor() {
-  if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+(function initWorkSwiper() {
+  if (typeof Swiper === "undefined") return;
+  const el = document.querySelector(".work-swiper");
+  if (!el) return;
 
-  const dot = document.querySelector(".cursor-dot");
-  const ring = document.querySelector(".cursor-ring");
-  if (!dot || !ring) return;
-
-  let mx = window.innerWidth / 2, my = window.innerHeight / 2;
-  let dx = mx, dy = my;
-  let rx = mx, ry = my;
-
-  window.addEventListener("mousemove", (e) => { mx = e.clientX; my = e.clientY; });
-  window.addEventListener("mouseleave", () => {
-    dot.style.opacity = ring.style.opacity = "0";
-  });
-  window.addEventListener("mouseenter", () => {
-    dot.style.opacity = ring.style.opacity = "";
-  });
-
-  function tick() {
-    // Dot tracks tightly
-    dx += (mx - dx) * 0.55;
-    dy += (my - dy) * 0.55;
-    // Ring lags — this "eases into place" feel is what makes it look premium
-    rx += (mx - rx) * 0.14;
-    ry += (my - ry) * 0.14;
-
-    dot.style.transform = `translate3d(${dx}px, ${dy}px, 0) translate(-50%, -50%)`;
-    ring.style.transform = `translate3d(${rx}px, ${ry}px, 0) translate(-50%, -50%)`;
-    requestAnimationFrame(tick);
-  }
-  tick();
-
-  // Hover-target detection
-  const hoverables = document.querySelectorAll(
-    "a, button, .work-card, .skill-cat li, .timeline__item, [data-magnetic]"
-  );
-  hoverables.forEach((el) => {
-    el.addEventListener("mouseenter", () => document.body.classList.add("cursor-active"));
-    el.addEventListener("mouseleave", () => document.body.classList.remove("cursor-active"));
-  });
-
-  // Magnetic effect for buttons & links marked with .btn / [data-magnetic]
-  const magnets = document.querySelectorAll(".btn, .nav__cta, .contact__email, [data-magnetic]");
-  magnets.forEach((el) => {
-    const strength = parseFloat(el.dataset.magneticStrength || "0.3");
-    el.addEventListener("mousemove", (e) => {
-      const rect = el.getBoundingClientRect();
-      const relX = e.clientX - rect.left - rect.width / 2;
-      const relY = e.clientY - rect.top - rect.height / 2;
-      el.style.transform = `translate(${relX * strength}px, ${relY * strength}px)`;
-    });
-    el.addEventListener("mouseleave", () => {
-      el.style.transform = "";
-    });
+  new Swiper(el, {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    loop: true,
+    speed: 700,
+    coverflowEffect: {
+      rotate: 35,
+      stretch: 0,
+      depth: 260,
+      modifier: 1,
+      slideShadows: false,
+    },
+    autoplay: prefersReducedMotion ? false : { delay: 3800, disableOnInteraction: false, pauseOnMouseEnter: true },
+    keyboard: { enabled: true },
+    navigation: {
+      nextEl: ".work-3d__nav--next",
+      prevEl: ".work-3d__nav--prev",
+    },
+    pagination: {
+      el: ".work-swiper .swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      0:    { spaceBetween: 20 },
+      768:  { spaceBetween: 30 },
+      1200: { spaceBetween: 40 },
+    },
   });
 })();
 
